@@ -1,0 +1,19 @@
+{
+  "title": "FastMove Carpenters",
+  "description": "Precision woodwork. Fast turnarounds. PMB & surrounds.",
+  "nav": [
+    { "label": "Home", "path": "/" },
+    { "label": "Services", "path": "/services" },
+    { "label": "Work", "path": "/work" },
+    { "label": "Reviews", "path": "/reviews" },
+    { "label": "Contact", "path": "/contact" }
+  ],
+  "pages": [
+    { "path": "/", "label": "Home", "sectionsKey": "home" },
+    { "path": "/services", "label": "Services", "sectionsKey": "services" },
+    { "path": "/work", "label": "Work", "sectionsKey": "work" },
+    { "path": "/reviews", "label": "Reviews", "sectionsKey": "reviews" },
+    { "path": "/contact", "label": "Contact", "sectionsKey": "contact" }
+  ]
+}
+  

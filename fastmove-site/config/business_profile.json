@@ -1,0 +1,54 @@
+{
+  "legalName": "JOACHIM FASTMOVE CARPENTERS",
+  "displayName": "FastMove Carpenters",
+  "tagline": "Precision woodwork. Fast turnarounds.",
+  "phone": "+27-XX-XXX-XXXX",
+  "whatsapp": "+27-XX-XXX-XXXX",
+  "email": "quotes@fastmovecarpenters.co.za",
+  "address": {
+    "street": "19 Syndicate",
+    "city": "Pietermaritzburg",
+    "postcode": "3201",
+    "province": "KZN",
+    "country": "South Africa"
+  },
+  "hours": [
+    { "days": "Mon-Sat", "open": "08:00", "close": "18:00" }
+  ],
+  "serviceAreas": ["Pietermaritzburg", "Howick", "Hilton", "Camperdown", "Durban (by quote)"],
+  "services": [
+    {"slug": "kitchens", "name": "Custom Kitchens", "description": "Design, fit and finish for modern kitchens.", "lead_time_days": 14, "from_price_zar": 25000},
+    {"slug": "cupboards", "name": "Built-in Cupboards", "description": "Custom built-ins to maximize your space.", "lead_time_days": 7, "from_price_zar": 8000},
+    {"slug": "doors", "name": "Doors & Frames", "description": "Hanging doors, skirting and architraves.", "lead_time_days": 2, "from_price_zar": 1800},
+    {"slug": "floors", "name": "Timber Floors & Skirting", "description": "Hardwood and laminate expertly installed.", "lead_time_days": 4, "from_price_zar": 1500},
+    {"slug": "decks", "name": "Outdoor Decking", "description": "Professional outdoor decking solutions.", "lead_time_days": 7, "from_price_zar": 12000},
+    {"slug": "repairs", "name": "Repairs & Maintenance", "description": "Quick repairs and maintenance work.", "lead_time_days": 1, "from_price_zar": 750}
+  ],
+  "social": {
+    "facebook": "https://facebook.com/fastmovecarpenters",
+    "instagram": "https://instagram.com/fastmovecarpenters",
+    "whatsapp": "https://wa.me/27XXXXXXXXX"
+  },
+  "cta": {
+    "primary": {"label": "WhatsApp a Photo for a Quote", "href": "https://wa.me/27XXXXXXXXX"},
+    "secondary": {"label": "Free Site Visit", "href": "/contact"}
+  },
+  "faqs": [
+    {"q": "How fast can you start?", "a": "Small jobs within 48h; kitchens 1–2 weeks after deposit."},
+    {"q": "What materials do you use?", "a": "MA board, plywood, hardwoods (kiaat, oak) as specified."},
+    {"q": "Do you remove old units?", "a": "Yes, we include disposal by arrangement."},
+    {"q": "Are you insured?", "a": "Yes, fully insured and accredited."},
+    {"q": "Do you offer free quotes?", "a": "Absolutely. We'll visit and provide a written quote."},
+    {"q": "What areas do you cover?", "a": "Pietermaritzburg and surrounding areas within 80km."},
+    {"q": "How soon can you start?", "a": "Typically within 2-3 weeks after quote approval."}
+  ],
+  "testimonials": [
+    {"quote": "Brilliant craftsmanship and friendly team.", "author": "J. Smith"},
+    {"quote": "On time and on budget. Highly recommend.", "author": "A. Patel"},
+    {"quote": "Clean, quick and excellent results.", "author": "M. Green"},
+    {"quote": "The new decking looks amazing!", "author": "T. Brown"},
+    {"quote": "Arrived on time, left the site spotless.", "author": "Homeowner, Hilton"},
+    {"quote": "Good price, great finish.", "author": "Letting agent, PMB"}
+  ]
+}
+  

@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: E2E Tests
+        run: npm run e2e
+
+      - name: Lighthouse CI
+        run: |
+          npm i -g @lhci/cli
+          npx vite preview --port 4173 &
+          npx wait-on http://localhost:4173
+          lhci autorun --collect.url=http://localhost:4173 --collect.staticDistDir=dist --upload.target=temporary-public-storage
+

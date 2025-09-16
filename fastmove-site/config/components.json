@@ -1,0 +1,77 @@
+{
+  "home": [
+    {
+      "type": "HeroCanvas",
+      "props": {
+        "title": "FastMove Carpenters",
+        "subtitle": "Precision woodwork. Fast turnarounds. PMB & surrounds.",
+        "cta": { "label": "Get a quote", "to": "/contact" }
+      }
+    },
+    {
+      "type": "ServiceCards",
+      "itemsFrom": "services"
+    },
+    { 
+      "type": "Process", 
+      "props": { 
+        "steps": [
+          "WhatsApp photos & measurements",
+          "Site visit & transparent quote", 
+          "Build & install with guarantee"
+        ] 
+      } 
+    },
+    { "type": "Gallery", "props": { "folder": "/assets/gallery" } },
+    { 
+      "type": "TestimonialList", 
+      "itemsFrom": "testimonials"
+    },
+    { 
+      "type": "CTA", 
+      "propsRef": "cta.primary"
+    }
+  ],
+  "services": [
+    { 
+      "type": "ServiceCards", 
+      "itemsFrom": "services"
+    },
+    { 
+      "type": "Process", 
+      "props": { 
+        "steps": [
+          "Survey & measurements", 
+          "Detailed quote", 
+          "Professional build", 
+          "Aftercare & warranty"
+        ] 
+      } 
+    },
+    { 
+      "type": "FAQ", 
+      "itemsFrom": "faqs"
+    },
+    { 
+      "type": "CTA", 
+      "propsRef": "cta.secondary"
+    }
+  ],
+  "work": [
+    { "type": "Gallery", "props": { "folder": "/assets/gallery" } }
+  ],
+  "reviews": [
+    { 
+      "type": "TestimonialList", 
+      "itemsFrom": "testimonials"
+    }
+  ],
+  "contact": [
+    { "type": "ContactForm", "props": { "endpoint": "/api/lead" } },
+    { 
+      "type": "FAQ", 
+      "itemsFrom": "faqs"
+    }
+  ]
+}
+  
