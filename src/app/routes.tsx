@@ -1,12 +1,12 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
-import Home from '@/pages/Home';
-import Services from '@/pages/Services';
-import Work from '@/pages/Work';
-import Reviews from '@/pages/Reviews';
-import Contact from '@/pages/Contact';
-import { getConfig } from '@/lib/config';
+import Home from '../pages/Home';
+import Services from '../pages/Services';
+import Work from '../pages/Work';
+import Reviews from '../pages/Reviews';
+import Contact from '../pages/Contact';
+import { getConfig } from '../lib/config';
 
 const { site } = getConfig();
 

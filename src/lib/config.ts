@@ -23,7 +23,7 @@ export type Config = {
   site: SiteConfig;
   brand: Brand;
   business: BusinessProfile;
-  components: typeof components;
+  components: any;
 };
 
 export function getConfig(): Config {

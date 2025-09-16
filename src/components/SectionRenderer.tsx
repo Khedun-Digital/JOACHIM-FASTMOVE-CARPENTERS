@@ -1,7 +1,7 @@
 import React from 'react';
 import { componentRegistry } from './registry';
-import { getConfig } from '@/lib/config';
-import type { SectionInput } from '@/lib/schema';
+import { getConfig } from '../lib/config.ts';
+import type { SectionInput } from '../lib/schema.ts';
 
 type Props = { sections: SectionInput[] };
 

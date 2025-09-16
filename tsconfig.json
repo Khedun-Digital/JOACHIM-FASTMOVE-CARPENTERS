@@ -11,6 +11,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "strict": true,
+    "strictNullChecks": false,
+    "allowImportingTsExtensions": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {

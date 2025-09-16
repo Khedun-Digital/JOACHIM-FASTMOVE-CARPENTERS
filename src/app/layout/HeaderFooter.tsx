@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { getConfig } from '@/lib/config';
+import { getConfig } from '../../lib/config.ts';
 
 type Props = { children: React.ReactNode };
 

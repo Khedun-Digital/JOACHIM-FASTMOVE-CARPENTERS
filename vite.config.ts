@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import path from 'node:path';
 
 export default defineConfig({
   base: '/JOACHIM-FASTMOVE-CARPENTERS/',
@@ -10,7 +9,7 @@ export default defineConfig({
       name: 'dev-mock-lead',
       apply: 'serve',
       configureServer(server) {
-        server.middlewares.use('/api/lead', async (req, res, next) => {
+        server.middlewares.use('/api/lead', async (req: any, res: any, next: any) => {
           if (req.method !== 'POST') {
             res.statusCode = 405;
             res.end('Method Not Allowed');
@@ -23,7 +22,7 @@ export default defineConfig({
             return;
           }
           let body = '';
-          req.on('data', (c) => (body += c));
+          req.on('data', (c: any) => (body += c));
           req.on('end', () => {
             try {
               const json = body ? JSON.parse(body) : {};
@@ -39,9 +38,9 @@ export default defineConfig({
     }
   ],
   resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src')
-    }
+    alias: [
+      { find: '@', replacement: new URL('./src', import.meta.url).pathname }
+    ]
   }
 });
 

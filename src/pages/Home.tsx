@@ -1,6 +1,6 @@
 import React from 'react';
-import { getConfig } from '@/lib/config';
-import { SectionRenderer } from '@/components/SectionRenderer';
+import { getConfig } from '../lib/config.ts';
+import { SectionRenderer } from '../components/SectionRenderer.tsx';
 
 export default function Home(): JSX.Element {
   console.log('Home component rendering');
@@ -8,7 +8,7 @@ export default function Home(): JSX.Element {
   try {
     const { components } = getConfig();
     console.log('Components loaded:', components);
-    return <SectionRenderer sections={components.home} />;
+    return <SectionRenderer sections={components.home as any[]} />;
   } catch (error) {
     console.error('Error in Home component:', error);
     return (
