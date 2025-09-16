@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import path from 'node:path';
 
 export default defineConfig({
+  base: '/JOACHIM-FASTMOVE-CARPENTERS/',
   plugins: [
     react(),
     {
@@ -36,8 +37,7 @@ export default defineConfig({
         });
       }
     }
-  ]
-  ,
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
