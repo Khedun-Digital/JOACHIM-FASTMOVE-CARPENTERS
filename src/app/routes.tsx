@@ -1,5 +1,5 @@
 import React from 'react';
-import { createHashRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate, type RouteObject } from 'react-router-dom';
 import App from './App';
 import Home from '../pages/Home';
 import Services from '../pages/Services';
@@ -10,28 +10,57 @@ import { getConfig } from '../lib/config';
 
 const { site } = getConfig();
 
-export const router = createHashRouter(
+const normalizePath = (path: string): string => path.replace(/^\//, '');
+
+const resolveElement = (sectionKey: string) => {
+  switch (sectionKey) {
+    case 'home':
+      return <Home />;
+    case 'services':
+      return <Services />;
+    case 'work':
+      return <Work />;
+    case 'reviews':
+      return <Reviews />;
+    case 'contact':
+      return <Contact />;
+    default:
+      return <Home />;
+  }
+};
+
+const childRoutes: RouteObject[] = site.pages.map((page) => {
+  const element = resolveElement(page.sectionsKey);
+  if (page.sectionsKey === 'home') {
+    return { index: true, element } as const;
+  }
+
+  return {
+    path: normalizePath(page.path),
+    element
+  } as const;
+});
+
+const homePath = site.pages.find((page) => page.sectionsKey === 'home')?.path ?? '/';
+const absoluteHomePath = homePath.startsWith('/') ? homePath : `/${homePath}`;
+
+const routes: RouteObject[] = [
+  ...childRoutes,
+  {
+    path: '*',
+    element: <Navigate to={absoluteHomePath} replace />
+  }
+];
+
+export const router = createBrowserRouter(
   [
     {
       path: '/',
       element: <App />,
-      children: site.pages.map((p) => {
-        switch (p.sectionsKey) {
-          case 'home':
-            return { index: true, element: <Home /> } as const;
-          case 'services':
-            return { path: p.path.replace(/^\//, ''), element: <Services /> } as const;
-          case 'work':
-            return { path: p.path.replace(/^\//, ''), element: <Work /> } as const;
-          case 'reviews':
-            return { path: p.path.replace(/^\//, ''), element: <Reviews /> } as const;
-          case 'contact':
-            return { path: p.path.replace(/^\//, ''), element: <Contact /> } as const;
-          default:
-            return { path: p.path.replace(/^\//, ''), element: <Home /> } as const;
-        }
-      })
+      children: routes
     }
-  ]
+  ],
+  {
+    basename: import.meta.env.BASE_URL
+  }
 );
-
